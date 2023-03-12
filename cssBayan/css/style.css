@@ -1,0 +1,146 @@
+body {
+    font-family: Sono, sans-serif;
+    font-size: 26px;
+    line-height: 26px;
+    color: rebeccapurple;
+    background-color: rgba(165, 133, 228, 0.14);
+}
+
+.wrapper {
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+.accordion {
+    margin-bottom: 15px;
+    border: 2px solid rebeccapurple;
+    border-radius: 5px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.input {
+    -webkit-appearance: none;
+    width: 0;
+    height: 0;
+    appearance: none;
+    position: absolute;
+}
+
+.label {
+    flex-grow: 1;
+    transition: color .2s ease;
+}
+
+.icon-x {
+    display: none;
+    opacity: 0;
+}
+
+.icon-x, .icon-plus {
+    transition: opacity .2s ease;
+}
+
+.image {
+    border-radius: 5px;
+    height: 0;
+    opacity: 0;
+    transition: transform .2s ease, height .2s ease;
+}
+
+.accordion:active .image {
+    box-shadow: rgba(149, 157, 165, 0.5) 0 8px 24px;
+}
+
+.accordion:active .label,
+.accordion:active .icon-x,
+.accordion:active .icon-plus {
+    color: #993366;
+}
+
+.accordion:active .icon-x,
+.accordion:active .icon-plus {
+    opacity: 1;
+}
+
+.input:checked + .header {
+    margin-bottom: 25px;
+}
+
+.input:checked + .header .label,
+.input:checked + .header .icon-x {
+    color: #8f3399;
+}
+
+.input:checked + .header .icon-x {
+    display: block;
+    opacity: 1;
+}
+
+.input:checked + .header .icon-plus {
+    display: none;
+    opacity: 0;
+}
+
+.input:checked ~ .image {
+    opacity: 1;
+    height: 100%;
+}
+
+@media (min-width: 820px) {
+    body {
+        font-size: 46px;
+        line-height: 46px;
+    }
+
+    .wrapper {
+        max-width: 500px;
+    }
+}
+@media (min-width: 1920px) {
+    body {
+        font-size: 66px;
+        line-height: 66px;
+    }
+
+    .wrapper {
+        max-width: 800px;
+    }
+}
+
+@media (hover: hover) {
+    .icon-plus {
+        display: none;
+    }
+
+    .accordion, .accordion * {
+        cursor: pointer;
+    }
+
+    .accordion-wrapper:hover .icon-plus {
+        display: block;
+    }
+
+    .accordion-wrapper:hover .icon-plus,
+    .accordion-wrapper:hover .icon-x,
+    .accordion-wrapper:hover .label {
+        color: #993366;
+    }
+
+    .header:hover ~ .image {
+        opacity: 1;
+        height: 100%;
+    }
+
+    .header:hover {
+        margin-bottom: 25px;
+    }
+}
+
