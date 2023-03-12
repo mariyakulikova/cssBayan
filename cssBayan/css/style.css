@@ -143,5 +143,9 @@ body {
     .header:hover {
         margin-bottom: 25px;
     }
+
+    .image:hover {
+        border: 1px solid #993366;
+    }
 }
 
