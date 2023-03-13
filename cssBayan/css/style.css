@@ -29,7 +29,6 @@ body {
 .input {
     -webkit-appearance: none;
     appearance: none;
-    position: absolute;
     cursor: pointer;
     width: 100%;
     height: 100%;
@@ -56,6 +55,7 @@ body {
     border-radius: 5px;
     height: 0;
     opacity: 0;
+    object-fit: contain;
     transition: transform .2s ease, height .2s ease;
 }
 
@@ -138,12 +138,12 @@ body {
         color: #993366;
     }
 
-    .header:hover ~ .image {
+    .accordion:hover .image {
         opacity: 1;
         height: 100%;
     }
 
-    .header:hover {
+    .accordion:hover .header {
         margin-bottom: 25px;
     }
 
