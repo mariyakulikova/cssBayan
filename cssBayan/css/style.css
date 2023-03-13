@@ -1,0 +1,159 @@
+body {
+    font-family: Sono, sans-serif;
+    font-size: 14px;
+    line-height: 14px;
+    color: rebeccapurple;
+    background-color: rgba(165, 133, 228, 0.14);
+}
+
+.wrapper {
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+.accordion {
+    margin-bottom: 15px;
+    border: 2px solid rebeccapurple;
+    border-radius: 5px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.label-row {
+    display: flex;
+    justify-content: center;
+}
+
+.input {
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    flex-grow: 1;
+    transition: color .4s ease;
+}
+
+.icon-x {
+    display: none;
+    opacity: 0;
+}
+
+.icon-x, .icon-plus {
+    transition: opacity .4s ease;
+    margin-left: 10px;
+}
+
+.image {
+    border-radius: 5px;
+    height: 0;
+    opacity: 0;
+    object-fit: contain;
+    transition: opacity .4s ease, height .4s ease;
+}
+
+.accordion:active .image {
+    box-shadow: rgba(149, 157, 165, 0.5) 0 8px 24px;
+}
+
+.accordion:active .label,
+.accordion:active .icon-x,
+.accordion:active .icon-plus {
+    color: #993366;
+}
+
+.accordion:active .icon-x,
+.accordion:active .icon-plus {
+    opacity: 1;
+}
+
+.input:checked + .container .label-row {
+    margin-bottom: 25px;
+}
+
+.input:checked + .container .label,
+.input:checked + .container .icon-x {
+    color: #8f3399;
+}
+
+.input:checked + .container .icon-x {
+    display: block;
+    opacity: 1;
+}
+
+.input:checked + .container .icon-plus {
+    display: none;
+    opacity: 0;
+}
+
+.input:checked ~ .container .image {
+    opacity: 1;
+    height: auto;
+}
+
+@media (min-width: 820px) {
+    body {
+        font-size: 26px;
+        line-height: 26px;
+    }
+
+    .wrapper {
+        max-width: 600px;
+    }
+}
+@media (min-width: 1920px) {
+    body {
+        font-size: 36px;
+        line-height: 36px;
+    }
+
+    .wrapper {
+        max-width: 900px;
+    }
+}
+
+@media (hover: hover) {
+    .icon-plus {
+        display: none;
+    }
+
+    .accordion, .accordion * {
+        cursor: pointer;
+    }
+
+    .accordion-wrapper:hover .icon-plus {
+        display: block;
+    }
+
+    .accordion-wrapper:hover .icon-plus,
+    .accordion-wrapper:hover .icon-x,
+    .accordion-wrapper:hover .label {
+        color: #993366;
+    }
+
+    .accordion:hover .image {
+        opacity: 1;
+        height: 100%;
+    }
+
+    .accordion:hover .container .label-row {
+        margin-bottom: 25px;
+    }
+
+    .image:hover {
+        border: 1px solid #993366;
+    }
+}
+
