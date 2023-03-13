@@ -43,7 +43,7 @@ body {
 
 .label {
     flex-grow: 1;
-    transition: color .2s ease;
+    transition: color .4s ease;
 }
 
 .icon-x {
@@ -52,7 +52,7 @@ body {
 }
 
 .icon-x, .icon-plus {
-    transition: opacity .2s ease;
+    transition: opacity .4s ease;
     margin-left: 10px;
 }
 
@@ -61,7 +61,7 @@ body {
     height: 0;
     opacity: 0;
     object-fit: contain;
-    transition: transform .2s ease, height .2s ease;
+    transition: opacity .4s ease, height .4s ease;
 }
 
 .accordion:active .image {
